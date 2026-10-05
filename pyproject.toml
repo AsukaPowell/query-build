@@ -1,6 +1,6 @@
 [project]
 name = "query-build"
-version = "0.1.0"
+version = "0.1.1"
 description = "Build and parse query strings with repeated keys handled correctly."
 requires-python = ">=3.10"
 dependencies = []
