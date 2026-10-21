@@ -37,3 +37,10 @@ The trade-off is that pairs are returned as a flat list, not a dict. If you want
 - `parse_query(str) -> list[tuple[str, str]]` — parses (with or without a leading `?`).
 - `get_all(pairs, key) -> list[str]` — every value for `key`.
 - `get_first(pairs, key, default=None) -> str | None` — first value, or `default` only when the key is absent.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
